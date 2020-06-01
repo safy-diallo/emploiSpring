@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymleaf.org" >
+<head>
+	<meta charset="UTF-8"/>
+	<title>Candidature</title>
+	<link rel="stylesheet" type="text/css" th:href="@{../css/bootstrap.min.css}"/>
+</head>
+<body>
+	<h2>Hee safi tu dois développer</h2>
+	 <div class="nav navbar-default">
+		 	<ul class="nav navbar-nav">
+		 		<li><a th:href="@{/Offre/liste}">Offre d'emploi</a></li>
+		 		<li><a th:href="@{/Candidat/liste}">Demande d'emploi</a></li>
+		 		<li><a th:href="@{/Offre/listeoffre}"><button type="button" class="btn btn-success">Voir les offres</button></a></li>
+		 		<li><a th:href="@{/Candidat/listedemande}"><button type="button" class="btn btn-success">Voir demande</button></a></li>
+		 	</ul>
+		</div>
+				
+	<div class="container col-sm-6 col-md-12" >
+		<div class="panel panel-info">
+			<div class="panel-heading">Liste des demandes</div>
+			<div class="panel-body">
+			<table class="table table-striped table-bordered">
+					<tr>
+						<th>Id</th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Date</th>
+						<th>Durée d'experience</th>
+						<th>Disponibilité</th>
+						<th>Niveau d'étude</th>
+						<th>Motivation</th>
+					</tr>			
+					<tr th:each="c:${liste_candidats}">
+						<td th:text="${c.id}"></td>
+						<td th:text="${c.nom}"></td>
+						<td th:text="${c.prenom}"></td>
+						<td th:text="${c.date}"></td>
+						<td th:text="${c.experience}"></td>
+						<td th:text="${c.Disponibilite}"></td>	
+						<td th:text="${c.niveauEtude}"></td>
+						<td th:text="${c.motivation}"></td>
+					</tr>
+				</table>
+			</div>
+			</div>
+		</div> 
+		 
+</body>
+
+</html>
